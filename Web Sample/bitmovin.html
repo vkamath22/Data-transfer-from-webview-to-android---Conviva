@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Page Title</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/bitmovinplayer.js"></script>
+		<script type="text/javascript" src="https://cdn.bitmovin.com/analytics/web/beta/2/bitmovinanalytics.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/animate.css">
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<link rel="stylesheet" type="text/css" href="css/pageStyle.css">
+			
+	</head>
+	<body>
+	<div class="wrapper">
+		<header id="header" class="">
+			
+		</header><!-- /header -->
+			<div class="main-body">
+				<div id="my-player"></div>
+				<div class="carousel3">
+					<h3>Oddballs & OutCasts -- BitMovin</h3>
+					<div class="owl-carousel owl-three">
+					  <div><a href="bitmovin.html?type=dash	" title=""><img class="px10Radius" src="https://image.tmdb.org/t/p/w1280/weZV8fBcCMDvU5PIQ19w4gPOChD.jpg" alt=""></a>
+				  </div>
+				  <div><a href="bitmovin.html?type=hls" title=""><img class="px10Radius" src="https://image.tmdb.org/t/p/w1280/pKKvCaL1TPTVtbI6EeliyND3api.jpg" alt=""></a>
+				  </div>
+				  <div><a href="bitmovin.html?type=dash" title=""><img class="px10Radius" src="https://image.tmdb.org/t/p/w1280/oDL2ryJ0sV2bmjgshVgJb3qzvwp.jpg" alt=""></a>
+				  </div>
+				  <div><a href="bitmovin.html?type=hls" title=""><img class="px10Radius" src="https://image.tmdb.org/t/p/w1280/3UBQGKS8c1dxRnDiu5kUK6ej3pP.jpg" alt=""></a>
+				  </div>
+				  <div><a href="bitmovin.html?type=dash" title=""><img class="px10Radius" src="https://image.tmdb.org/t/p/w1280/2i0JH5WqYFqki7WDhUW56Sg0obh.jpg" alt=""></a>
+				  </div>
+				  <div><a href="bitmovin.html?type=hls" title=""><img class="px10Radius" src="https://image.tmdb.org/t/p/w1280/xnopI5Xtky18MPhK40cZAGAOVeV.jpg" alt=""></a>
+				  </div>
+				  <div><a href="bitmovin.html?type=dash" title=""><img class="px10Radius" src="https://image.tmdb.org/t/p/w1280/ktyVmIqfoaJ8w0gDSZyjhhOPpD6.jpg" alt=""></a>
+					</div>
+				</div>
+			</div><!-- main-body -->
+		<footer>
+			
+		</footer><!-- fotter -->
+	</div> <!-- Wrapper -->
+
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="js/conviva-core-sdk.js"></script>
+		<script src="js/convivaAnalytics.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script type="text/javascript">
+			conviva = new ConvivaAnalytic();
+			var contentMetadata = {};
+			contentMetadata[Conviva.Constants.ASSET_NAME] = "[" + "ABCD" + "] " + "conviva Test", 
+		    contentMetadata[Conviva.Constants.IS_LIVE] = Conviva.Constants.StreamType.VOD;
+		    contentMetadata[Conviva.Constants.PLAYER_NAME] = "BitMovin Player", 
+		    contentMetadata[Conviva.Constants.DEFAULT_RESOURCE] = "LEVEL3";
+		    contentMetadata[Conviva.Constants.FRAMEWORK_VERSION] = "8.4", 
+		    contentMetadata[Conviva.Constants.VIEWER_ID] = "123456789", 
+		    contentMetadata[Conviva.Constants.DURATION] = 0;
+		    contentMetadata[Conviva.Constants.ENCODED_FRAMERATE] = 30;
+
+		    var playerInfo = {};
+			playerInfo[Conviva.Constants.FRAMEWORK_NAME] = "BitMovin";
+			playerInfo[Conviva.Constants.FRAMEWORK_VERSION] = "8.4";
+			
+			$(".owl-carousel").owlCarousel({
+			  	margin:30,
+			  	items:5,
+			  });
+
+			function playVideo(type){
+				const container = document.getElementById('my-player');
+				conviva.initialize(contentMetadata,playerInfo);
+				
+				const playerConfig = {
+				    key: '6b934848-9e91-4a49-9210-cf85f52e67c7',
+				    height: 640,
+				    events: {
+			            error: function (details) {
+			                console.log("onError", details)
+			                var eventPlayload = details
+					        eventPlayload.type = details.type;
+					        eventPlayload.message = details.message;
+					        eventPlayload.code = details.code;
+					        eventPlayload.name = details.name;
+					        conviva.ReportEvent("error",eventPlayload,details.timestamp,"");
+			            }
+				    
+				}
+			}
+				const player = new bitmovin.player.Player(container, playerConfig);
+				if(type =="hls"){
+					var source = {
+					    title: "Getting Started with the Bitmovin Player",
+					    description: "Now you are ready to embed the Bitmovin Player into your own website :)",
+					    hls: 'https://cozmic-public.s3-ap-southeast-1.amazonaws.com/vod_1080p.m3u8',
+					    poster: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/poster.jpg'
+					};
+				}
+				else{
+					var source = {
+						title: "Getting Started with the Bitmovin Player",
+					    description: "Now you are ready to embed the Bitmovin Player into your own website :)",
+					    dash: 'http://www.bok.net/dash/tears_of_steel/cleartext/stream.mpd',
+					    poster: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/poster.jpg'
+					}
+				}
+
+				/*player.ads.schedule({
+			      tag: {
+			        url: "//pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&impl=s&gdfp_req=1&env=vp&output=vmap&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ar%3Dpreonly&cmsid=496&vid=short_onecue&correlator=[random]",
+			        type: "ima"
+			      },
+			      id: 'Ad',
+			      position: document.getElementById('schedule-list').value
+			    });
+*/
+				
+				player.load(source).then(
+				    player => {
+				      console.log('Successfully created Bitmovin Player instance')
+				      addEventListeners();
+				    },
+				    reason => {
+				      console.log('Error while creating Bitmovin Player instance')
+				    }
+				);
+
+				function addEventListeners(){
+					var lastprogress=0;
+
+					player.on(bitmovin.player.PlayerEvent.Playing, () => conviva.ReportEvent("playing","","0",contentMetadata));
+
+					player.on(bitmovin.player.PlayerEvent.Play, () => conviva.ReportEvent("play","","0",contentMetadata));
+
+					player.on(bitmovin.player.PlayerEvent.Paused, () => conviva.ReportEvent("pause","","0",contentMetadata));
+
+					player.on(bitmovin.player.PlayerEvent.Seek, () => conviva.ReportEvent("seeking","", player.getCurrentTime(),""));
+
+					player.on(bitmovin.player.PlayerEvent.Seeked, () => conviva.ReportEvent("seeked","",player.getCurrentTime(),""));
+
+					player.on(bitmovin.player.PlayerEvent.PlaybackFinished, () => conviva.ReportEvent("ended"));
+
+					player.on(bitmovin.player.PlayerEvent.StallStarted, () => conviva.ReportEvent("waiting"));
+
+					player.on(bitmovin.player.PlayerEvent.StallEnded, () => conviva.ReportEvent("play","","0",contentMetadata));
+
+					player.on(bitmovin.player.PlayerEvent.TimeChanged, () => {
+						if(lastprogress != Math.round(player.getCurrentTime())){
+					    	lastprogress = Math.round(player.getCurrentTime());
+					    	conviva.updateAnalytics(player.getBufferedRanges().length,player.getCurrentTime(),30,0);
+					    }
+					});
+
+					player.on(bitmovin.player.PlayerEvent.Error, (details) => console.log(details));
+
+				}
+			}
+
+			function detectStream(){
+				var urlParams = new URLSearchParams(window.location.search);
+				var myParam = urlParams.get('type');
+				if(myParam=="hls"){
+					playVideo("hls");
+				}
+				else{
+					playVideo("dash");
+				}
+			}
+		detectStream();
+		</script>
+	</body>
+</html>

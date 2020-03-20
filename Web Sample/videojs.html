@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" type="text/css" href="css/pageStyle.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/6.6.5/videojs-contrib-ads.css">
+	<link rel="stylesheet" type="text/css" href="css/videojs-ima.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<div class="wrapper">
+		<header id="header" class="">
+			
+		</header><!-- /header -->
+			<div class="main-body zeroPadding">
+				<div class="videoJsPlayer">
+				 <video id="videoJSPlayer" class="video-js" controls preload="auto" autoplay="true" width= "100%" height="640"></video>	
+				</div><!-- videoJsPlayer -->
+				<div class="carousel3">
+					<h3>Horror and Fiction -- Shaka Player</h3>
+					<div class="owl-carousel owl-three">
+					  <div><a href="videojs.html?type=hls" title=""><img src="https://image.tmdb.org/t/p/w1280/aQvJ5WPzZgYVDrxLX4R6cLJCEaQ.jpg" alt=""></a></div>
+					  <div><a href="videojs.html?type=hls" title=""><img src="https://image.tmdb.org/t/p/w1280/6ApDtO7xaWAfPqfi2IARXIzj8QS.jpg" alt=""></a></div>
+					  <div><a href="videojs.html?type=hls" title=""><img src="https://image.tmdb.org/t/p/w1280/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg" alt=""></a></div>
+					  <div><a href="videojs.html?type=hls" title=""><img src="https://image.tmdb.org/t/p/w1280/5aGhaIHYuQbqlHWvWYqMCnj40y2.jpg" alt=""></a></div>
+					  <div><a href="videojs.html?type=hls" title=""><img src="https://image.tmdb.org/t/p/w1280/fAptqX0pUHH7SdMI5UPNViLX9fn.jpg" alt=""></a></div>
+					  <div><a href="videojs.html?type=hls" title=""><img src="https://image.tmdb.org/t/p/w1280/eA2D86Y6VPWuUzZyatiLBwpTilQ.jpg" alt=""></a></div>
+					  <div><a href="videojs.html?type=hls" title=""><img src="" alt=""></a></div>
+					</div>
+				</div>
+			</div><!-- main-body -->
+		<footer>
+		</footer><!-- fotter -->
+	</div> <!-- Wrapper -->
+
+<script src="https://vjs.zencdn.net/7.6.6/video.js"></script>
+<script src="js/conviva-core-sdk.js"></script>
+<script src="js/convivaAnalytics.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/6.6.5/videojs.ads.min.js"></script>
+<script src="js/videojs-ima.js"></script>
+<script type="text/javascript" charset="utf-8">
+	var videoJSPlayer = videojs('videoJSPlayer');
+	var videoSample ={};
+	var ended = false;
+	var myVideo=document.getElementById("videoJSPlayer"); 
+	videoSample.HLS = "http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8";
+	videoSample.DASH = "http://www.bok.net/dash/tears_of_steel/cleartext/stream.mpd";
+	videoSample.MP4 = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+	var ads = true;
+	var contentMetadata = {};
+	contentMetadata[Conviva.Constants.ASSET_NAME] = "[" + "ABCD" + "] " + "conviva Test", 
+    
+    contentMetadata[Conviva.Constants.IS_LIVE] = Conviva.Constants.StreamType.VOD;
+    contentMetadata[Conviva.Constants.PLAYER_NAME] = "VideoJS", 
+    contentMetadata[Conviva.Constants.DEFAULT_RESOURCE] = "LEVEL3";
+    contentMetadata[Conviva.Constants.FRAMEWORK_VERSION] = videojs.VERSION, 
+    contentMetadata[Conviva.Constants.VIEWER_ID] = "123456789", 
+    contentMetadata[Conviva.Constants.DURATION] = 0;
+    contentMetadata[Conviva.Constants.ENCODED_FRAMERATE] = 30;
+
+    var playerInfo = {};
+	playerInfo[Conviva.Constants.FRAMEWORK_NAME] = "VideoJS";
+	playerInfo[Conviva.Constants.FRAMEWORK_VERSION] = videojs.VERSION;
+
+	$(".owl-carousel").owlCarousel({
+	  	margin:30,
+	  	items:5,
+	  });
+
+function gatherAdData(){
+	var adInfo = {};
+	adInfo[Conviva.Constants.ASSET_NAME] = "[" + "ADS" + "] " + "conviva ADS Test", 
+	adInfo[Conviva.Constants.IS_LIVE] = Conviva.Constants.StreamType.VOD;
+	adInfo[Conviva.Constants.PLAYER_NAME] = "VideoJS", 
+	adInfo[Conviva.Constants.DEFAULT_RESOURCE] = "LEVEL3";
+	adInfo[Conviva.Constants.FRAMEWORK_VERSION] = videojs.VERSION, 
+	adInfo[Conviva.Constants.VIEWER_ID] = "123456789", 
+	adInfo[Conviva.Constants.DURATION] = 0;
+	adInfo[Conviva.Constants.ENCODED_FRAMERATE] = 30;
+	adInfo["c3.ad.breakID"] = "f7000b6e8e904afc8c6e740edbabe411";
+	adInfo["c3.ad.advertisingId"] = "NBC_ANV_3643152";
+	adInfo["c3.ad.technology"] = 
+	adInfo["c3.ad.id"] = videoJSPlayer.ima.controller.getCurrentAd().g.adId;
+	adInfo["c3.ad.system"] = videoJSPlayer.ima.controller.getCurrentAd().g.adSystem
+	adInfo["c3.ad.position"] = videoJSPlayer.ads.adType;
+	adInfo["c3.ad.mediaFileApiFramework"] = videoJSPlayer.ima.controller.getCurrentAd().g.apiFramework;
+	adInfo["c3.ad.unitName"] = videoJSPlayer.ima.controller.getCurrentAd().g.title;
+	adInfo["c3.ad.creativeId"] = videoJSPlayer.ima.controller.getCurrentAd().g.creativeId;
+	adInfo["c3.ad.creativeName"] = videoJSPlayer.ima.controller.getCurrentAd().g.creativeAdId;
+	adInfo["c3.ad.advertiserId"] = videoJSPlayer.ima.controller.getCurrentAd().g.adId;
+	adInfo["c3.ad.campaignName"] = videoJSPlayer.ima.controller.getCurrentAd().g.title;
+	adInfo["c3.ad.adManagerName"] = "IMA"
+	adInfo["c3.ad.adManagerVersion"] = "3"
+	adInfo["c3.ad.adTagUrl"] = videoJSPlayer.ima.controller.settings.adTagUrl;
+	adInfo["clickThroughUrl"] = videoJSPlayer.ima.controller.getCurrentAd().g.clickThroughUrl
+	adInfo["mediaUrl"] = videoJSPlayer.ima.controller.getCurrentAd().g.mediaUrl
+	return adInfo;
+}
+
+function playVideo(type){
+	if (myVideo.playing) {
+			reset();
+		}
+
+		addEventListeners();
+		conviva = new ConvivaAnalytic();
+		if(type =="hls"){
+			contentMetadata[Conviva.Constants.STREAM_URL] = videoSample.HLS
+			videoJSPlayer.src({type: 'application/x-mpegURL', src: videoSample.HLS});
+		}
+		else{
+			contentMetadata[Conviva.Constants.STREAM_URL] = videoSample.DASH
+			videoJSPlayer.src({type: 'application/dash+xml', src: videoSample.DASH});
+		}
+		conviva.initialize(contentMetadata,playerInfo);
+		if(ads){
+
+			var options = {
+			  adTagUrl: 'https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&impl=s&gdfp_req=1&env=vp&output=vmap&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ar%3Dpremidpost&cmsid=496&vid=short_onecue&correlator='
+			};
+			videoJSPlayer.ima(options);
+		}
+		videoJSPlayer.ready(function() {
+			console.log("Playing your video");
+		});
+}
+
+function loadNextVideo(type){
+	reset();
+	addEventListeners()
+	if (type=="hls"){
+		contentMetadata[Conviva.Constants.STREAM_URL] = videoSample.HLS
+		playVideo("hls");
+	}
+	else{
+		contentMetadata[Conviva.Constants.STREAM_URL] = videoSample.DASH
+		playVideo("dash");
+	}
+}
+
+function addEventListeners() {
+	var lastprogress=0;
+	var adsManager;
+	videoJSPlayer.on("play", function (e) {
+		AndroidFunction.play("play");
+	    if(ended == true){
+			reloadSession();
+		}
+	    console.log("Video playback started: " + videoJSPlayer.currentTime());
+	    conviva.ReportEvent("play","","0",contentMetadata);
+
+	});
+
+	videoJSPlayer.on("playing", function (e) {
+	    conviva.ReportEvent("play","","0",contentMetadata);
+	    ended = false;
+	});
+
+	videoJSPlayer.on("pause", function (e) {
+		AndroidFunction.pause("pause");
+	    conviva.ReportEvent("pause","","0",contentMetadata);
+	});
+
+	videoJSPlayer.on("seeking", function (e) {
+		AndroidFunction.seeking("Seeking");
+		console.log("on Seeking");
+	    conviva.ReportEvent("seeking","",videoJSPlayer.currentTime(),"");
+	});
+
+	videoJSPlayer.on("seeked", function (e) {
+		AndroidFunction.seeked("Seeked");
+		console.log("on Seeked");
+	    conviva.ReportEvent("seeked","",videoJSPlayer.currentTime(),"");
+	});
+
+	videoJSPlayer.on("ended", function (e) {
+		AndroidFunction.ended("Ended");
+	    conviva.ReportEvent("ended");
+	    ended = true;
+	});
+
+	videoJSPlayer.on("playerreset", function (e) {
+	   
+	});
+
+	videoJSPlayer.on("waiting", function (e) {
+		AndroidFunction.waiting("Buffering");
+	    conviva.ReportEvent("waiting");
+	});
+	videoJSPlayer.on("replay", function (e) {
+	    conviva.ReportEvent("replay");
+	});
+
+	videoJSPlayer.on("progress", function (e) {
+	    if(lastprogress != Math.round(videoJSPlayer.currentTime())){
+	    	lastprogress = Math.round(videoJSPlayer.currentTime());
+	    	conviva.updateAnalytics(videoJSPlayer.buffered().length,videoJSPlayer.currentTime(),30,videoJSPlayer.hls.bandwidth);
+	    }
+	});
+
+	videoJSPlayer.on('error', function(e) {
+      console.log(e);
+       e.stopImmediatePropagation();
+        var error = this.player().error();
+        console.log('error!', error.code, error.type , error.message);
+        var eventPlayload = {}
+        eventPlayload.type = error.type;
+        eventPlayload.message = error.message;
+        eventPlayload.code = error.code;
+        conviva.ReportEvent("error",eventPlayload,videoJSPlayer.currentTime(),"");
+	});  
+
+	videoJSPlayer.on('ads-manager', function(response){
+	   adsManager = response.adsManager;
+		adsManager.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, onAdError.bind(this));
+	  	adsManager.addEventListener(google.ima.AdErrorEvent.AD_BREAK_READY, onAdBreakReady.bind(this));
+	    adsManager.addEventListener(google.ima.AdEvent.Type.CONTENT_PAUSE_REQUESTED, onContentPauseRequested.bind(this));
+	    adsManager.addEventListener(google.ima.AdEvent.Type.CONTENT_RESUME_REQUESTED, onContentResumeRequested.bind(this));
+	    adsManager.addEventListener(google.ima.AdEvent.Type.ALL_ADS_COMPLETED, onAllAdsCompleted.bind(this));
+	    adsManager.addEventListener(google.ima.AdEvent.Type.LOADED, onAdLoaded.bind(this));
+	    adsManager.addEventListener(google.ima.AdEvent.Type.STARTED, onAdStarted.bind(this));
+	    adsManager.addEventListener(google.ima.AdEvent.Type.COMPLETE, onAdComplete.bind(this));
+	    adsManager.addEventListener(google.ima.AdEvent.Type.SKIPPED, onAdComplete.bind(this));
+	    adsManager.addEventListener(google.ima.AdEvent.Type.PAUSED, onAdPaused.bind(this));
+	    adsManager.addEventListener(google.ima.AdEvent.Type.BUFFERING, onAdBuffering.bind(this));
+ 	  // Your code in response to the `ads-manager` event.
+	})
+}
+
+function onAdError(){
+	console.log("onAdError");
+	conviva.ReportEvent("aderror",gatherAdData()); 
+}
+
+function onAdBreakReady(){
+	console.log("onAdBreakReady");
+}
+
+function onContentPauseRequested(){
+	console.log("onContentPauseRequested");
+}
+
+function onContentResumeRequested(){
+	console.log("onContentResumeRequested");
+}
+
+function onAllAdsCompleted(){
+	console.log("onAllAdsCompleted");
+}
+
+function onAdLoaded(){
+	console.log("onAdLoaded");
+	conviva.ReportEvent("adloaded",""); 
+}
+
+function onAdStarted(){
+	console.log("onAdStarted");
+	conviva.ReportEvent("adstarted",gatherAdData()); 
+}
+
+function onAdComplete(){
+	console.log("onAdComplete");
+	conviva.ReportEvent("adcompleted"); 
+}
+
+function onAdPaused(){
+	console.log("onAdComplete");
+	conviva.ReportEvent("adpaused"); 
+}
+
+function onAdBuffering(){
+	console.log("onAdBuffering");
+	conviva.ReportEvent("adbuffering"); 
+}
+
+function reset(){
+	if(videoJSPlayer)
+		conviva.ReportEvent("ended"); 
+		videoJSPlayer.reset();
+}
+
+function reloadSession(){
+	conviva.initialize(contentMetadata,playerInfo);
+	ended == false;
+}
+
+function detectStream(){
+	var urlParams = new URLSearchParams(window.location.search);
+	var myParam = urlParams.get('type');
+	if(myParam=="hls"){
+		playVideo("hls");
+	}
+	else{
+		playVideo("dash");
+	}
+}
+
+detectStream();
+
+</script>
+</body>
+</html>

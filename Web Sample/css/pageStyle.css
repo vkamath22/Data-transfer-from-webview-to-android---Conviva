@@ -1,0 +1,59 @@
+body{
+	margin: 0;
+	padding: 0px;
+	background-color: #000 !important;
+}
+
+h1, h2, h3, h4, h5 {
+	color: #fff !important;
+	font-weight: 200 !important;
+	padding-bottom: 15px;
+}
+a{
+	color:#fff !important;
+	outline: none;
+}
+.video-js {
+	width: 100%!important;
+}
+#banner-img{
+	height: 83vh;
+}
+.bitmovinplayer-ad-container, .bitmovinplayer-container {
+	height: 640px;
+}
+
+.zeroPadding{
+	padding: 0 !important;
+}
+.navbar-brand img{
+	width: 200px;
+}
+.wrapper .main-body {
+	width: 100%;
+}
+.wrapper .main-body {
+	padding: 20px;
+}
+.wrapper .main-body .videoJsPlayer, .wrapper .main-body .bitmovinPlayer {
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+} 
+.circle-radius{
+	border-radius: 50%;
+}
+.gradient-border{
+  background: -webkit-linear-gradient(left top, crimson 0%, #f90 100%);
+  width: 300px !important;
+  height: 300px;
+  border-radius: 1000px;
+  padding: 2px;
+}
+.carousel2, .carousel3, .carousel4, .carousel5, .carousel6, .carousel6, .carousel7 {
+	margin: 20px 0 20px 0;
+} 
+
+.px10Radius{
+border-radius: 10px;
+}
