@@ -1,6 +1,6 @@
 Status : Development
 
-# Data-transfer-from-android-to-webview---Conviva
+# Data-transfer-from-webview-to-android---Conviva
 This projects demonstrates how you can send data from a Webview to an Android app using the Javascript Interface.
 
 Contents of this project :
