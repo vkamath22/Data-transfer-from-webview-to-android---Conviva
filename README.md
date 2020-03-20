@@ -18,10 +18,11 @@ Sample Android Project :
 The android project show how an event can be read from a webpage. This project makes use of the Javascript Interface api to read events from the WebView. 
 Please refer : https://developer.android.com/guide/webapps/webview for more information. 
 For this project we just trigger normal toast's messages after listening the event fired. 
-Once an Event occurs, the webpage calls : AndroidFunction.function("Event Name"); which is then read by the android application to trigger the toast. 
+Once an Event occurs, the webpage calls : AndroidFunction.function("Event Name"); which is then read by the android application to trigger the toast.
 
 Things to make a note of :  
 1. This application will only work on Android Webview. 
 2. If you intend to run this application for both websites and android application please put proper check while writing the interface as it will throw an error saying function not found.
 3. This is not a production ready code and may be subject to changes or optmisations without notifing you.
 4. Do not copy paste or use this code for your own application. 
+5. Please not "AndroidFunction" is the function name for the interface written in the android app. These have to be the same.
