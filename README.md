@@ -26,3 +26,5 @@ Things to make a note of :
 3. This is not a production ready code and may be subject to changes or optmisations without notifing you.
 4. Do not copy paste or use this code for your own application. 
 5. Please not "AndroidFunction" is the function name for the interface written in the android app. These have to be the same.
+6. Please make sure both projects run on same network.
+7. Please change the source url for the webview in the android app to the IP address of the local machine. 
