@@ -28,3 +28,4 @@ Things to make a note of :
 5. Please not "AndroidFunction" is the function name for the interface written in the android app. These have to be the same.
 6. Please make sure both projects run on same network.
 7. Please change the source url for the webview in the android app to the IP address of the local machine. 
+8. Good time.
